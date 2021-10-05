@@ -40,12 +40,7 @@
 		<sonar.exclusions>
 			**/*Application.java
 		</sonar.exclusions>
- 
-		<flyway.driver>org.postgresql.Driver</flyway.driver>
-		<flyway.url>${env.DB_JDBC_URL}</flyway.url>
-		<flyway.user>${env.DB_USERNAME}</flyway.user>
-		<flyway.password>${env.DB_PASSWORD}</flyway.password>
-		<flyway.locations>filesystem:src/main/resources/db/migration</flyway.locations>
+
 	</properties>
 
 	<dependencies>
@@ -91,14 +86,6 @@
 			<version>0.10</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.flywaydb</groupId>
-			<artifactId>flyway-core</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-csv</artifactId>
@@ -254,23 +241,7 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
-
-		<dependency>
-		    <groupId>sax</groupId>
-		    <artifactId>sax</artifactId>
-		    <version>2.0.1</version>
-		</dependency>
-		<dependency>
-            <groupId>org.dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>${dom4j.version}</version>
-        </dependency>
-		<dependency>
-		    <groupId>com.vladmihalcea</groupId>
-		    <artifactId>hibernate-types-52</artifactId>
-		    <version>${jsonb.version}</version>
-		</dependency>
-
+		
 	</dependencies>
 
 	<repositories>
