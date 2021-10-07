@@ -1,0 +1,543 @@
+openapi: 3.0.0
+info:
+  description: >-
+    Custom replacer between hibob and hris.
+  version: 1.0.0
+  title: Custom replacer between hibob and hris
+  license:
+    name: Apache-2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+tags:
+  - name: replacer
+    description: Replacing your custom fields
+paths:
+  /custom:
+    get:
+      tags:
+        - replace
+      summary: Accepts request, replace it with mapper and process to Kafka
+      description: 'Accepts request, replace it with mapper and process to Kafka'
+      operationId: replace
+      responses:
+        '200':
+          description: Model without API but paths need to be present in order to generate
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/customResponse"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customRequest'
+        required: true
+components:
+  schemas:
+    customRequest:
+      type: object
+      properties:
+        FullName:
+          type: string
+          example: Ivo Šmajstrla
+        displayName:
+          type: string
+          example: Ivo Šmajstrla
+        personal:
+          type: object
+          properties:
+            shortBirthDate:
+              type: string
+              example: 01-01
+            pronouns:
+              type: string
+              example: Xe / Xem
+            communication:
+              type: object
+              properties:
+                skypeUsername:
+                  type: string
+                  format: nullable
+                slackUsername:
+                  type: string
+                  format: nullable
+            custom:
+              type: object
+              properties:
+                field_1620721757321:
+                  type: array
+                  items:
+                    type: string
+                field_1620656620397:
+                  type: string
+                  format: nullable
+                field_1620656651374:
+                  type: string
+                  format: nullable
+                field_1620656641418:
+                  type: string
+                  format: nullable
+                field_1620656719091:
+                  type: string
+                  format: nullable
+            honorific:
+              type: string
+              format: nullable
+            nationality:
+              type: array
+              items:
+                type: string
+                example: Andorran
+        creationDateTime:
+          type: string
+          example: 2021-05-10T09:29:06.358057
+        work:
+          type: object
+          properties:
+            shortStartDate:
+              type: string
+              example: 05-01
+            startDate:
+              type: string
+              format: date
+              example: 2021-05-01
+            manager:
+              type: string
+              format: nullable
+            workPhone:
+              type: string
+              format: nullable
+            tenureDuration:
+              type: object
+              properties:
+                periodISO:
+                  type: string
+                  example: P5M
+                sortFactor:
+                  type: number
+                  example: 150
+                humanize:
+                  type: string
+                  example: 5 months
+            durationOfEmployment:
+              type: object
+              properties:
+                periodISO:
+                  type: string
+                  example: P5M
+                sortFactor:
+                  type: number
+                  example: 150
+                humanize:
+                  type: string
+                  example: 5 months
+            reportsToIdInCompany:
+              type: string
+              format: nullable
+            employeeIdInCompany:
+              type: string
+              format: nullable
+            reportsTo:
+              type: string
+              format: nullable
+            workMobile:
+              type: string
+              example: 2425346374
+            indirectReports:
+              type: number
+              example: 1
+            siteId:
+              type: number
+              example: 1482762
+            department:
+              type: string
+              example: Test
+            tenureYears:
+              type: number
+              example: 0
+            customColumns:
+              type: object
+              properties:
+                column_1620832556726:
+                  type: string
+                  format: nullable
+                column_1620832454233:
+                  type: string
+                  format: nullable
+                column_1621859812592:
+                  type: string
+                  format: nullable
+                column_1620832033458:
+                  type: string
+                  format: nullable
+                column_1620832653579:
+                  type: string
+                  format: nullable
+                column_1620832080748:
+                  type: string
+                  format: nullable
+                column_1621536524514:
+                  type: string
+                  format: nullable
+                column_1622629726113:
+                  type: array
+                  items:
+                    type: string
+                column_1620847674358:
+                  type: string
+                  format: nullable
+                column_1620847694365:
+                  type: string
+                  format: nullable
+                column_1620832362165:
+                  type: string
+                  example: CTO
+                column_1620847706988:
+                  type: string
+                  format: nullable
+                column_1620843628717:
+                  type: string
+                  format: nullable
+                column_1620847723325:
+                  type: string
+                  format: nullable
+            isManager:
+              type: boolean
+            title:
+              type: string
+              example: Admins
+            site:
+              type: string
+              example: London (Demo)
+            activeEffectiveDate:
+              type: string
+              format: date
+              example: 2021-05-02
+            directReports:
+              type: number
+              example: 1
+            secondLevelManager:
+              type: string
+              format: nullable
+            daysOfPreviousService:
+              type: number
+              example: 0
+            yearsOfService:
+              type: number
+              example: 0.416
+        avatarUrl:
+          type: string
+          example: https://cdn.filestackcontent.com/ZyBWbFNPR5GVBVULggFB?policy=eyJoYW5kbGUiOiJaeUJXYkZOUFI1R1ZCVlVMZ2dGQiIsImV4cGlyeSI6NDYzNTkxODcwNCwiY2FsbCI6WyJyZWFkIiwgImNvbnZlcnQiXX0=&signature=b96b1f5caae283ec9d7ac9ea74a66b2752b372128690017ba586483fd1f0acc5
+        secondName:
+          type: string
+          format: nullable
+        about:
+          type: object
+          properties:
+            foodPreferences:
+              type: array
+              items:
+                type: string
+                example: meatarian
+            custom:
+              type: object
+              properties:
+                field_1620723273420:
+                  type: string
+                  format: nullable
+            socialData:
+              type: object
+              properties:
+                linkedin:
+                  type: string
+                  format: nullable
+                twitter:
+                  type: string
+                  format: nullable
+                facebook:
+                  type: string
+                  format: nullable
+            superpowers:
+              type: array
+              items:
+                type: string
+                example: thinking
+            hobbies:
+              type: array
+              items:
+                type: string
+                example: sleeping
+            about:
+              type: string
+              format: nullable
+            avatar:
+              type: string
+              example: https://cdn.filestackcontent.com/ZyBWbFNPR5GVBVULggFB?policy=eyJoYW5kbGUiOiJaeUJXYkZOUFI1R1ZCVlVMZ2dGQiIsImV4cGlyeSI6NDYzNTkxODcwNCwiY2FsbCI6WyJyZWFkIiwgImNvbnZlcnQiXX0=&signature=b96b1f5caae283ec9d7ac9ea74a66b2752b372128690017ba586483fd1f0acc5
+        companyId:
+          type: number
+          example: 393237
+        email:
+          type: string
+          example: ismajstrla@gmail.com
+        surname:
+          type: string
+          example: Šmajstrla
+        id:
+          type: string
+          example: 2570428242561335380
+        firstName:
+          type: string
+          example: Ivo
+    customResponse:
+      type: object
+      properties:
+        FullName:
+          type: string
+          example: Ivo Šmajstrla
+        displayName:
+          type: string
+          example: Ivo Šmajstrla
+        personal:
+          type: object
+          properties:
+            shortBirthDate:
+              type: string
+              example: 01-01
+            pronouns:
+              type: string
+              example: Xe / Xem
+            communication:
+              type: object
+              properties:
+                skypeUsername:
+                  type: string
+                  format: nullable
+                slackUsername:
+                  type: string
+                  format: nullable
+            custom:
+              type: object
+              properties:
+                citizenship:
+                  type: array
+                  items:
+                    type: string
+                birthSurname:
+                  type: string
+                  format: nullable
+                countryOfBirth:
+                  type: string
+                  format: nullable
+                cityOfBirth:
+                  type: string
+                  format: nullable
+                birthNumber:
+                  type: string
+                  format: nullable
+            honorific:
+              type: string
+              format: nullable
+            nationality:
+              type: array
+              items:
+                type: string
+                example: Andorran
+        creationDateTime:
+          type: string
+          example: 2021-05-10T09:29:06.358057
+        work:
+          type: object
+          properties:
+            shortStartDate:
+              type: string
+              example: 05-01
+            startDate:
+              type: string
+              format: date
+              example: 2021-05-01
+            manager:
+              type: string
+              format: nullable
+            workPhone:
+              type: string
+              format: nullable
+            tenureDuration:
+              type: object
+              properties:
+                periodISO:
+                  type: string
+                  example: P5M
+                sortFactor:
+                  type: number
+                  example: 150
+                humanize:
+                  type: string
+                  example: 5 months
+            durationOfEmployment:
+              type: object
+              properties:
+                periodISO:
+                  type: string
+                  example: P5M
+                sortFactor:
+                  type: number
+                  example: 150
+                humanize:
+                  type: string
+                  example: 5 months
+            reportsToIdInCompany:
+              type: string
+              format: nullable
+            employeeIdInCompany:
+              type: string
+              format: nullable
+            reportsTo:
+              type: string
+              format: nullable
+            workMobile:
+              type: string
+              example: 2425346374
+            indirectReports:
+              type: number
+              example: 1
+            siteId:
+              type: number
+              example: 1482762
+            department:
+              type: string
+              example: Test
+            tenureYears:
+              type: number
+              example: 0
+            customColumns:
+              type: object
+              properties:
+                column_1620832556726:
+                  type: string
+                  format: nullable
+                column_1620832454233:
+                  type: string
+                  format: nullable
+                column_1621859812592:
+                  type: string
+                  format: nullable
+                column_1620832033458:
+                  type: string
+                  format: nullable
+                column_1620832653579:
+                  type: string
+                  format: nullable
+                column_1620832080748:
+                  type: string
+                  format: nullable
+                column_1621536524514:
+                  type: string
+                  format: nullable
+                column_1622629726113:
+                  type: array
+                  items:
+                    type: string
+                column_1620847674358:
+                  type: string
+                  format: nullable
+                column_1620847694365:
+                  type: string
+                  format: nullable
+                column_1620832362165:
+                  type: string
+                  example: CTO
+                column_1620847706988:
+                  type: string
+                  format: nullable
+                column_1620843628717:
+                  type: string
+                  format: nullable
+                column_1620847723325:
+                  type: string
+                  format: nullable
+            isManager:
+              type: boolean
+            title:
+              type: string
+              example: Admins
+            site:
+              type: string
+              example: London (Demo)
+            activeEffectiveDate:
+              type: string
+              format: date
+              example: 2021-05-02
+            directReports:
+              type: number
+              example: 1
+            secondLevelManager:
+              type: string
+              format: nullable
+            daysOfPreviousService:
+              type: number
+              example: 0
+            yearsOfService:
+              type: number
+              example: 0.416
+        avatarUrl:
+          type: string
+          example: https://cdn.filestackcontent.com/ZyBWbFNPR5GVBVULggFB?policy=eyJoYW5kbGUiOiJaeUJXYkZOUFI1R1ZCVlVMZ2dGQiIsImV4cGlyeSI6NDYzNTkxODcwNCwiY2FsbCI6WyJyZWFkIiwgImNvbnZlcnQiXX0=&signature=b96b1f5caae283ec9d7ac9ea74a66b2752b372128690017ba586483fd1f0acc5
+        secondName:
+          type: string
+          format: nullable
+        about:
+          type: object
+          properties:
+            foodPreferences:
+              type: array
+              items:
+                type: string
+                example: meatarian
+            custom:
+              type: object
+              properties:
+                field_1620723273420:
+                  type: string
+                  format: nullable
+            socialData:
+              type: object
+              properties:
+                linkedin:
+                  type: string
+                  format: nullable
+                twitter:
+                  type: string
+                  format: nullable
+                facebook:
+                  type: string
+                  format: nullable
+            superpowers:
+              type: array
+              items:
+                type: string
+                example: thinking
+            hobbies:
+              type: array
+              items:
+                type: string
+                example: sleeping
+            about:
+              type: string
+              format: nullable
+            avatar:
+              type: string
+              example: https://cdn.filestackcontent.com/ZyBWbFNPR5GVBVULggFB?policy=eyJoYW5kbGUiOiJaeUJXYkZOUFI1R1ZCVlVMZ2dGQiIsImV4cGlyeSI6NDYzNTkxODcwNCwiY2FsbCI6WyJyZWFkIiwgImNvbnZlcnQiXX0=&signature=b96b1f5caae283ec9d7ac9ea74a66b2752b372128690017ba586483fd1f0acc5
+        companyId:
+          type: number
+          example: 393237
+        email:
+          type: string
+          example: ismajstrla@gmail.com
+        surname:
+          type: string
+          example: Šmajstrla
+        id:
+          type: string
+          example: 2570428242561335380
+        firstName:
+          type: string
+          example: Ivo
