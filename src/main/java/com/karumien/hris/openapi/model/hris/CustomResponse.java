@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * CustomResponse
  */
@@ -17,7 +16,7 @@ import io.swagger.annotations.ApiModelProperty;
 public class CustomResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("FullName")
+    @JsonProperty("fullName")
     private String fullName;
 
     @JsonProperty("displayName")
@@ -30,7 +29,7 @@ public class CustomResponse implements Serializable {
     private String creationDateTime;
 
     @JsonProperty("work")
-    private CustomRequestWork work;
+    private CustomResponseWork work;
 
     @JsonProperty("avatarUrl")
     private String avatarUrl;
@@ -39,7 +38,7 @@ public class CustomResponse implements Serializable {
     private String secondName;
 
     @JsonProperty("about")
-    private CustomRequestAbout about;
+    private CustomResponseAbout about;
 
     @JsonProperty("companyId")
     private BigDecimal companyId;
@@ -141,7 +140,7 @@ public class CustomResponse implements Serializable {
         this.creationDateTime = creationDateTime;
     }
 
-    public CustomResponse work(CustomRequestWork work) {
+    public CustomResponse work(CustomResponseWork work) {
         this.work = work;
         return this;
     }
@@ -155,11 +154,11 @@ public class CustomResponse implements Serializable {
 
     @Valid
 
-    public CustomRequestWork getWork() {
+    public CustomResponseWork getWork() {
         return work;
     }
 
-    public void setWork(CustomRequestWork work) {
+    public void setWork(CustomResponseWork work) {
         this.work = work;
     }
 
@@ -208,7 +207,7 @@ public class CustomResponse implements Serializable {
         this.secondName = secondName;
     }
 
-    public CustomResponse about(CustomRequestAbout about) {
+    public CustomResponse about(CustomResponseAbout about) {
         this.about = about;
         return this;
     }
@@ -222,11 +221,11 @@ public class CustomResponse implements Serializable {
 
     @Valid
 
-    public CustomRequestAbout getAbout() {
+    public CustomResponseAbout getAbout() {
         return about;
     }
 
-    public void setAbout(CustomRequestAbout about) {
+    public void setAbout(CustomResponseAbout about) {
         this.about = about;
     }
 

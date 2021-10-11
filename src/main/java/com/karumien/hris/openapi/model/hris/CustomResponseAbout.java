@@ -10,19 +10,20 @@ import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
+
 /**
- * CustomRequestAbout
+ * CustomResponseAbout
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
-public class CustomRequestAbout implements Serializable {
+public class CustomResponseAbout implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @JsonProperty("foodPreferences")
     @Valid
     private List<String> foodPreferences = null;
 
-    @JsonProperty("custom")
-    private CustomRequestAboutCustom custom;
+    @JsonProperty("favoriteSnack")
+    private String favoriteSnack;
 
     @JsonProperty("socialData")
     private CustomRequestAboutSocialData socialData;
@@ -41,12 +42,12 @@ public class CustomRequestAbout implements Serializable {
     @JsonProperty("avatar")
     private String avatar;
 
-    public CustomRequestAbout foodPreferences(List<String> foodPreferences) {
+    public CustomResponseAbout foodPreferences(List<String> foodPreferences) {
         this.foodPreferences = foodPreferences;
         return this;
     }
 
-    public CustomRequestAbout addFoodPreferencesItem(String foodPreferencesItem) {
+    public CustomResponseAbout addFoodPreferencesItem(String foodPreferencesItem) {
         if (this.foodPreferences == null) {
             this.foodPreferences = new ArrayList<>();
         }
@@ -70,29 +71,28 @@ public class CustomRequestAbout implements Serializable {
         this.foodPreferences = foodPreferences;
     }
 
-    public CustomRequestAbout custom(CustomRequestAboutCustom custom) {
-        this.custom = custom;
+    public CustomResponseAbout favoriteSnack(String favoriteSnack) {
+        this.favoriteSnack = favoriteSnack;
         return this;
     }
 
     /**
-     * Get custom
+     * Get favoriteSnack
      *
-     * @return custom
+     * @return favoriteSnack
      */
     @ApiModelProperty(value = "")
 
-    @Valid
 
-    public CustomRequestAboutCustom getCustom() {
-        return custom;
+    public String getFavoriteSnack() {
+        return favoriteSnack;
     }
 
-    public void setCustom(CustomRequestAboutCustom custom) {
-        this.custom = custom;
+    public void setFavoriteSnack(String favoriteSnack) {
+        this.favoriteSnack = favoriteSnack;
     }
 
-    public CustomRequestAbout socialData(CustomRequestAboutSocialData socialData) {
+    public CustomResponseAbout socialData(CustomRequestAboutSocialData socialData) {
         this.socialData = socialData;
         return this;
     }
@@ -114,12 +114,12 @@ public class CustomRequestAbout implements Serializable {
         this.socialData = socialData;
     }
 
-    public CustomRequestAbout superpowers(List<String> superpowers) {
+    public CustomResponseAbout superpowers(List<String> superpowers) {
         this.superpowers = superpowers;
         return this;
     }
 
-    public CustomRequestAbout addSuperpowersItem(String superpowersItem) {
+    public CustomResponseAbout addSuperpowersItem(String superpowersItem) {
         if (this.superpowers == null) {
             this.superpowers = new ArrayList<>();
         }
@@ -143,12 +143,12 @@ public class CustomRequestAbout implements Serializable {
         this.superpowers = superpowers;
     }
 
-    public CustomRequestAbout hobbies(List<String> hobbies) {
+    public CustomResponseAbout hobbies(List<String> hobbies) {
         this.hobbies = hobbies;
         return this;
     }
 
-    public CustomRequestAbout addHobbiesItem(String hobbiesItem) {
+    public CustomResponseAbout addHobbiesItem(String hobbiesItem) {
         if (this.hobbies == null) {
             this.hobbies = new ArrayList<>();
         }
@@ -172,7 +172,7 @@ public class CustomRequestAbout implements Serializable {
         this.hobbies = hobbies;
     }
 
-    public CustomRequestAbout about(String about) {
+    public CustomResponseAbout about(String about) {
         this.about = about;
         return this;
     }
@@ -193,7 +193,7 @@ public class CustomRequestAbout implements Serializable {
         this.about = about;
     }
 
-    public CustomRequestAbout avatar(String avatar) {
+    public CustomResponseAbout avatar(String avatar) {
         this.avatar = avatar;
         return this;
     }
@@ -226,28 +226,28 @@ public class CustomRequestAbout implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CustomRequestAbout customRequestAbout = (CustomRequestAbout) o;
-        return Objects.equals(this.foodPreferences, customRequestAbout.foodPreferences) &&
-                Objects.equals(this.custom, customRequestAbout.custom) &&
-                Objects.equals(this.socialData, customRequestAbout.socialData) &&
-                Objects.equals(this.superpowers, customRequestAbout.superpowers) &&
-                Objects.equals(this.hobbies, customRequestAbout.hobbies) &&
-                Objects.equals(this.about, customRequestAbout.about) &&
-                Objects.equals(this.avatar, customRequestAbout.avatar);
+        CustomResponseAbout customResponseAbout = (CustomResponseAbout) o;
+        return Objects.equals(this.foodPreferences, customResponseAbout.foodPreferences) &&
+                Objects.equals(this.favoriteSnack, customResponseAbout.favoriteSnack) &&
+                Objects.equals(this.socialData, customResponseAbout.socialData) &&
+                Objects.equals(this.superpowers, customResponseAbout.superpowers) &&
+                Objects.equals(this.hobbies, customResponseAbout.hobbies) &&
+                Objects.equals(this.about, customResponseAbout.about) &&
+                Objects.equals(this.avatar, customResponseAbout.avatar);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(foodPreferences, custom, socialData, superpowers, hobbies, about, avatar);
+        return Objects.hash(foodPreferences, favoriteSnack, socialData, superpowers, hobbies, about, avatar);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CustomRequestAbout {\n");
+        sb.append("class CustomResponseAbout {\n");
 
         sb.append("    foodPreferences: ").append(toIndentedString(foodPreferences)).append("\n");
-        sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
+        sb.append("    favoriteSnack: ").append(toIndentedString(favoriteSnack)).append("\n");
         sb.append("    socialData: ").append(toIndentedString(socialData)).append("\n");
         sb.append("    superpowers: ").append(toIndentedString(superpowers)).append("\n");
         sb.append("    hobbies: ").append(toIndentedString(hobbies)).append("\n");

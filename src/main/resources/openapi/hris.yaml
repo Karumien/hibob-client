@@ -36,7 +36,7 @@ components:
     customRequest:
       type: object
       properties:
-        FullName:
+        fullName:
           type: string
           example: Ivo Šmajstrla
         displayName:
@@ -290,7 +290,7 @@ components:
     customResponse:
       type: object
       properties:
-        FullName:
+        fullName:
           type: string
           example: Ivo Šmajstrla
         displayName:
@@ -314,25 +314,22 @@ components:
                 slackUsername:
                   type: string
                   format: nullable
-            custom:
-              type: object
-              properties:
-                citizenship:
-                  type: array
-                  items:
-                    type: string
-                birthSurname:
-                  type: string
-                  format: nullable
-                countryOfBirth:
-                  type: string
-                  format: nullable
-                cityOfBirth:
-                  type: string
-                  format: nullable
-                birthNumber:
-                  type: string
-                  format: nullable
+            citizenship:
+              type: array
+              items:
+                type: string
+            birthSurname:
+              type: string
+              format: nullable
+            countryOfBirth:
+              type: string
+              format: nullable
+            cityOfBirth:
+              type: string
+              format: nullable
+            birthNumber:
+              type: string
+              format: nullable
             honorific:
               type: string
               format: nullable
@@ -408,52 +405,49 @@ components:
             tenureYears:
               type: number
               example: 0
-            customColumns:
-              type: object
-              properties:
-                column_1620832556726:
-                  type: string
-                  format: nullable
-                column_1620832454233:
-                  type: string
-                  format: nullable
-                column_1621859812592:
-                  type: string
-                  format: nullable
-                column_1620832033458:
-                  type: string
-                  format: nullable
-                column_1620832653579:
-                  type: string
-                  format: nullable
-                column_1620832080748:
-                  type: string
-                  format: nullable
-                column_1621536524514:
-                  type: string
-                  format: nullable
-                column_1622629726113:
-                  type: array
-                  items:
-                    type: string
-                column_1620847674358:
-                  type: string
-                  format: nullable
-                column_1620847694365:
-                  type: string
-                  format: nullable
-                column_1620832362165:
-                  type: string
-                  example: CTO
-                column_1620847706988:
-                  type: string
-                  format: nullable
-                column_1620843628717:
-                  type: string
-                  format: nullable
-                column_1620847723325:
-                  type: string
-                  format: nullable
+            businessUnitId:
+              type: string
+              format: nullable
+            note:
+              type: string
+              format: nullable
+            reason:
+              type: string
+              format: nullable
+            budgetId:
+              type: string
+              format: nullable
+            profitAndCostCenterId:
+              type: string
+              format: nullable
+            legalEntity:
+              type: string
+              format: nullable
+            costCenterCost:
+              type: string
+              format: nullable
+            adRole:
+              type: array
+              items:
+                type: string
+            dottedLineManager:
+              type: string
+              format: nullable
+            hrBusinessPartner:
+              type: string
+              format: nullable
+            businessUnitOrFunction:
+              type: string
+              example: CTO
+            hrGeneralist:
+              type: string
+              format: nullable
+            customSecondLevelManager:
+              type: string
+              format: nullable
+            payrollSpecialist:
+              type: string
+              format: nullable
             isManager:
               type: boolean
             title:
@@ -492,12 +486,9 @@ components:
               items:
                 type: string
                 example: meatarian
-            custom:
-              type: object
-              properties:
-                field_1620723273420:
-                  type: string
-                  format: nullable
+            favoriteSnack:
+              type: string
+              format: nullable
             socialData:
               type: object
               properties:

@@ -9,7 +9,6 @@ import javax.validation.Valid;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
-
 /**
  * CustomRequestWorkTenureDuration
  */
